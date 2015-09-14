@@ -1,0 +1,19 @@
+Distributed Concurrent Version System
+=====================================
+
+## Introduction
+---------------
+
+>El desarrollo de grandes proyectos requiere de sistemas de control de código fuente, que ayuden a los grupos de programadores para manejar los cambios a su código. Existen sistemas que tiene como característica que el repositorio es centralizado y está disponible ya sea, en un sistema de archivos local o en uno remoto tal como un NFS. Sin embargo, hay muchos proyectos en los que los programadores son una parte de una ***SCoNe (Seldomly Connected Network)***. Para tales proyectos un sistema de control distribuido de código fuente es preferible. Un ejemplo donde un sistema distribuido es de utilidad ocurre cuando un grupo de programadores se encuentran trabajando desde equipos conectados a a través de una ***red UUCP***. Otro ejemplo donde el sistema distribuido es de utilidad es cuando uno o más programadores está trabajando bajo la protección de un _firewall_.
+
+>*__Distributed Concurrent Version System (DCVS)__* implementa un sistema de control de código fuente distribuido basado en un sistema centralizado llamado *__CVS__*. En general DCVS permite a los grupos de desarrolladores de software trabajar en conjunto sobre un proyecto de software usando un repositorio de código fuente replicado.
+
+>Las bases de un DCVS son:
+
+> 1.  Cada desarrollador almacena localmente una copia del repositorio.
+> 2.  Desde el repositorio local una copia de trabajo del código fuente es verificada.
+> 3.  Diversos proyectos que están bajo el control de un DCVS son mantenidos usando listas de distribución en los archivos drip del usuario. (Drip significa distributed replicated information pile).
+> 4.  Los cambios son aplicados a la copia de trabajo del código fuente local de un desarrollador.
+> 5.  Cuando los cambios están listos para ser entregados de vuelta dentro del repositorio local, un token debe ser obtenido para cada archivo localmente modificado.
+> 6.  Una vez que cada token se obtiene, los desarrolladores continúan el proceso de entrega en la forma normal de un CVS.
+> 7.  Después del committing exitoso, una copia del archivo repositorio local es replicada en cada uno de las máquinas en la lista de distribución.
